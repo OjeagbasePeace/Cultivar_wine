@@ -1,0 +1,154 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --accent-color: #000000;
+    --input-bg: #f5f5f5;
+    --font-main: 'Space Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+header {
+    margin-bottom: 60px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px 0;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+    border-radius: 0;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--border-color);
+}
+
+button {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 16px 32px;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    transition: transform 0.1s ease, opacity 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+#resultArea {
+    margin-top: 60px;
+    padding: 40px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#resultArea.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.result-content .label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+#predictionResult {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#confidenceResult {
+    font-size: 1.2rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    h1 {
+        font-size: 1.25rem;
+    }
+}

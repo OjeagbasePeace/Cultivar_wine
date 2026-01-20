@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Cultivar Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WINE_ORIGIN_PREDICTOR</h1>
+            <p class="subtitle">Enter chemical analysis for cultivar identification.</p>
+        </header>
+
+        <main>
+            <form id="predictionForm">
+                <div class="grid-container">
+                    <div class="input-group">
+                        <label for="alcohol">Alcohol</label>
+                        <input type="number" step="0.01" id="alcohol" name="alcohol" required placeholder="14.23">
+                    </div>
+                    <div class="input-group">
+                        <label for="malic_acid">Malic Acid</label>
+                        <input type="number" step="0.01" id="malic_acid" name="malic_acid" required placeholder="1.71">
+                    </div>
+                    <div class="input-group">
+                        <label for="ash">Ash</label>
+                        <input type="number" step="0.01" id="ash" name="ash" required placeholder="2.43">
+                    </div>
+                    <div class="input-group">
+                        <label for="alcalinity_of_ash">Alcalinity of Ash</label>
+                        <input type="number" step="0.01" id="alcalinity_of_ash" name="alcalinity_of_ash" required placeholder="15.6">
+                    </div>
+                    <div class="input-group">
+                        <label for="magnesium">Magnesium</label>
+                        <input type="number" step="0.01" id="magnesium" name="magnesium" required placeholder="127">
+                    </div>
+                    <div class="input-group">
+                        <label for="total_phenols">Total Phenols</label>
+                        <input type="number" step="0.01" id="total_phenols" name="total_phenols" required placeholder="2.80">
+                    </div>
+                    <div class="input-group">
+                        <label for="flavanoids">Flavanoids</label>
+                        <input type="number" step="0.01" id="flavanoids" name="flavanoids" required placeholder="3.06">
+                    </div>
+                    <div class="input-group">
+                        <label for="nonflavanoid_phenols">Nonflavanoid Phenols</label>
+                        <input type="number" step="0.01" id="nonflavanoid_phenols" name="nonflavanoid_phenols" required placeholder="0.28">
+                    </div>
+                    <div class="input-group">
+                        <label for="proanthocyanins">Proanthocyanins</label>
+                        <input type="number" step="0.01" id="proanthocyanins" name="proanthocyanins" required placeholder="2.29">
+                    </div>
+                    <div class="input-group">
+                        <label for="color_intensity">Color Intensity</label>
+                        <input type="number" step="0.01" id="color_intensity" name="color_intensity" required placeholder="5.64">
+                    </div>
+                    <div class="input-group">
+                        <label for="hue">Hue</label>
+                        <input type="number" step="0.01" id="hue" name="hue" required placeholder="1.04">
+                    </div>
+                    <div class="input-group">
+                        <label for="od280">OD280/OD315</label>
+                        <input type="number" step="0.01" id="od280" name="od280" required placeholder="3.92">
+                    </div>
+                    <div class="input-group">
+                        <label for="proline">Proline</label>
+                        <input type="number" step="0.01" id="proline" name="proline" required placeholder="1065">
+                    </div>
+                </div>
+                
+                <button type="submit" id="submitBtn">ANALYZE SAMPLE</button>
+            </form>
+
+            <div id="resultArea" class="hidden">
+                <div class="result-content">
+                    <span class="label">PREDICTED ORIGIN:</span>
+                    <h2 id="predictionResult">---</h2>
+                    <span class="label">CONFIDENCE:</span>
+                    <p id="confidenceResult">---</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
