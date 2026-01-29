@@ -1,0 +1,11 @@
+Name : Ojeagbase Peace Emesomi
+
+Matric Number: 22CH032046
+
+Machine Learning Algorithm Used: Naïve Bayes
+
+Model persistence method used (e.g., Joblib or Pickle): JSON-based custom serialization
+
+Live URL of the hosted application: https://emotion-detector-6p49.onrender.com/
+
+GitHub repository link: https://github.com/OjeagbasePeace/Cultivar_wine
